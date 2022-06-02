@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/chore.ejs') -%>
+<link rel="stylesheet" href="/stylesheets/ngo.css" >
+<div class="ngo__container" style="display: flex; justify-content:center; align-items:center;">
+    <div class="ngo__content">
+         <div class="ngo__logo">
+            <% let location = "/uploads/" + result.image %>
+            <img src="<%= location %>" class="ngo__image" alt="ngo" />
+        </div> 
+        <div class="ngo__info">
+            <div class="ngo__name">
+                <h1>Name: </h1>
+            <p><%= result.ngo_name %></p>
+            </div>
+            <div class="ngo__data">
+            <h1>About Ngo</h1>
+               <%= result.ngo_info %>
+            </div>
+            <% let src = "/dashboard-user/donor-user/" + result.ngo_mail;  %>
+            <button class="donate__btn" type="button" id="donate__btn"><a href="<%= src %>"> Donate Now </a> </button>
+        </div>
+    </div>
+</div>

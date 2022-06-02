@@ -1,0 +1,32 @@
+<%- include('home-user.ejs'); -%>
+    <link rel="stylesheet" href="/stylesheets/donor.css" />
+    <div class="donor_table">
+        <div class="table">
+            <table style="width:800px ; height: 100px;">
+                <tr>
+                    <th>
+                        <h2 id="table_heading">NGO</h2>
+                    </th>
+                    <th>
+                        <h2 id="table_heading">Amount</h2>
+                    </th>
+                    <th>
+                        <h2 id="table_heading">Time</h2>
+                    </th>
+
+                </tr>
+                <div class="table_element">
+                    <% donationData.forEach((donor) =>{ %>
+                        <tr>
+                            <th class="border1">   <%- donor.ngo_name %></th>
+                            <th class="border2">  &#x20B9; <%- donor.amount %></th>
+                            <th class="border2"><%- donor.donordate %></th>
+                        </tr>
+                   <% }) %>
+                </div>
+
+            </table>
+
+        </div>
+
+    </div>

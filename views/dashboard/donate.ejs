@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/chore.ejs') -%>
+<link rel="stylesheet" href="/stylesheets/donate.css" >
+<div class="donate__container">
+    <div class="donate__content">
+        <h1 class="heading"> Thanks for supporting us !! </h1>
+        <div class="donate__info">
+            <div class="donate__name">
+            <p><% data.ngo_name %></p>
+            </div>
+            <div class="donate__data">
+                <form method="Post" action="/dashboard-user/donor-user">
+                <h1 class="donate__amount"> Enter a donation amount:</h1>
+                <span class="donate__rupee">&#8377;</span>
+                <input type="number" name="donation" class="donate__input"> 
+            </div>
+            <button class="donate__btn" id="donate__btn" type="submit">Make it count</button>
+        </form>
+        </div>
+    </div>
+</div>

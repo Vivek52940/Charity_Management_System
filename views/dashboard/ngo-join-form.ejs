@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NGO</title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+
+<body>
+    <h2>Small charities can bring bigger impacts.</h2>
+<div class="container right-panel-active" id="container">
+	<div class="form-container sign-up-container" style="overflow: auto;">
+            <div class="form">
+			<h1>Create Account</h1>
+            <form method="POST" action="/dashboard/ngo-list/form">
+			<input id="fname" type="text" placeholder="fName" name="fName">
+            <input id="lname" type="text" placeholder="lName" name="lName">
+			<input id="email" type="email" placeholder="Email" name="email">
+			<input id="pass1" type="password" placeholder="Password" name="password">
+            <input id="pass2" type="password" placeholder="Rewrite Password" >
+            <textarea  cols="38" rows="10" id="description" name="description">Why you want to Join this NGO</textarea><br>
+            <!-- <label for="userphoto">Upload your Photo</label>
+            <input type="file" accept="image/*" id="userphoto" name="userphoto"> -->
+			<button style="cursor:pointer;" type="submit">Sign Up</button>
+        </form>
+            </div>
+	</div>
+	<div class="form-container sign-in-container">
+           <form action="/login" method="POST">
+            <div class="form">
+			<h3>Sign in</h3>
+			<input id="username" type="id" placeholder="email" name="email" />
+			<input id="password" type="password" placeholder="Password" name="password" />
+            <label id="label" style="color: red;  visibility : hidden" >Invalid Password</label>
+			<a href="#">Forgot your password?</a>
+			<button style="cursor:pointer;" type="submit" >Sign In</button>
+            </div>
+            </form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<br><br><br>
+                <h1>Don’t delay give today!</h1>
+			</div>
+			<div class="overlay-panel overlay-right">
+                <br><br><br><br><br>
+				<h1>Participate in changing the world.</h1>
+                <br><br><br><br>
+				<button class="ghost" id="signUp"  style="cursor:pointer;">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <footer>
+        <p>
+            Join with <b>NGO</b> and <b>Help someone’s dream come true </b>
+        </p>
+    </footer>
+</body>
+
+
+</html>

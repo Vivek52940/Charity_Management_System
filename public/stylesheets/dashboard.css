@@ -1,0 +1,102 @@
+.dashboard__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 20%;
+    height: 100vh;
+}
+.welcome__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+    height: 100vh;
+    margin-left: 20%;
+    margin-top: -55%;
+    color: white;
+    font-size: 50px;
+}
+.nav__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right:  #A73A7B 1px solid;
+}
+.desp__container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ngo__name {
+    margin-top: 5%;
+    color: white;
+    font-family: "montserrat";
+    font-size: 30px;
+    font-style: italic;
+    font-weight: normal;
+}
+.arrow {
+    width: 25px;
+    height: 25px;
+}
+
+.administrator__details {
+    margin-top: 12%;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+.administrator__img {
+    width: 25%;
+    display: block;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.administrator__name {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.administrator__name > p{
+    color: white;
+    font-family: "montserrat";
+    font-size: 15px;
+}
+.administrator__name > h1 {
+    color: white;
+    font-family: "montserrat";
+    font-size: 20px;
+}
+
+.profile__hr {
+    width: 100%;
+    margin-top: 40px;
+    height: 1px;
+    background-color: #A73A7B;
+    border: none;
+}
+.menu__elements {
+    margin-top: 5%;
+    width: 15vw;
+}
+
+.menu__elements > h1, .menu__elements > a {
+    color: white;
+    font-size: 10px;
+    font-weight: 100;
+    font-family: "montserrat";
+}
+
+.menu__elements > img {
+    height: 30px;
+    width: 30px;
+}
+  

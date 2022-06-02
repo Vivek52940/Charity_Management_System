@@ -1,0 +1,41 @@
+<%- include('home-ngo.ejs') -%>
+<link rel="stylesheet" href="/stylesheets/profile.css" >
+<div class="profile__container">
+    <div class="profile__name">
+        <img src="/images/arrow.png" alt="arrow"> 
+        <h1>Add Member</h1> 
+    </div>
+    <form action="/dashboard-ngo/add-member" method="POST" enctype="multipart/form-data" onsubmit="alert()">
+    <div class="profile__section">
+        <!-- <form action="/add-member" method="POST"> -->
+    <div class="profile__info">
+        <label>Name</label>
+        <input type="text" name="name" id="memberName"></input>
+
+        <label>Email</label>
+        <input type="text" name="email" id="email"></input>
+
+        <label>Designation</label>
+        <input type="text" name="designation" id="designation"></input>
+
+        <label>Add Image</label>
+        <input type="file" class="custom-file-input" style="border: none;" name="member-image" id="image" accept="image/*">
+
+    </div>
+    </div>
+    <button class="btn-update" type="submit">Add</button>
+</form>
+</div>
+
+<script>
+      const alert = () => {
+        swal({
+            title: "Done",
+            text: "Successfully done",
+            icon: "Success",
+        });
+        setTimeout(()=> {
+        window.location.href = '/dashboard-ngo'
+        },10000)
+    }
+</script>

@@ -1,0 +1,112 @@
+<%- include('home-user.ejs') -%>
+<link rel="stylesheet" href="/stylesheets/profile.css" >
+<div class="profile__container">
+    <div class="profile__name">
+        <img src="/images/arrow.png" alt="arrow"> 
+        <h1>Edit Profile</h1> 
+    </div>
+    <form action="/dashboard-user/profile" method="POST" enctype="multipart/form-data" onsubmit="alert()">
+    <div class="profile__section">
+    <div class="profile__info">
+        <label>First name</label>
+        <input type="text" name="fname" id="fname"></input>
+
+        <label>last Name</label>
+        <input type="text" name="lname" id="lname"></input>
+
+        <label>Email</label>
+        <input type="text" name="email" id="email"></input>
+
+        <label>Phone Number</label>
+        <input type="number" name="phoneNumber" id="phone"></input>
+    </div>
+    <div class="profile__infomore">
+        <label>Address</label>
+        <input type="text" name="address" id="address"></input>
+
+        <label>Password</label>
+        <input type="text" name="password" id="password"></input>
+
+        <label> Add photo </label>
+        <input type="file" class="custom-file-input" style="border: none;" name="userimage" id="image" accept="image/*">
+    </div>
+    </div>
+    <button class="btn-update">Update</button>
+    <button class="btn-delete" onclick="deleteProfile()">Delete Profile</button>
+</form>
+<img  height="240px" style="display: none;" alt="user image" id="userimage" />
+</div>
+
+<script>
+    var email = '';
+    window.onload = () => {
+       var userData = '<%- JSON.stringify(userInfo) %>';
+        setTimeout(()=> {
+            let data = JSON.parse(userData); 
+            document.getElementById('fname').value = data.fname;
+            document.getElementById('lname').value = data.lname;
+            document.getElementById('email').value = data.email;
+            email = data.email;
+            document.getElementById('password').value = data.password;
+            document.getElementById('address').value = data.address;
+            document.getElementById('phone').value = data.phoneNumber;
+        },500);
+    }
+
+    const alert = () => {
+        swal({
+            title: "Done",
+            text: "Successfully done",
+            icon: "Success",
+        });
+        setTimeout(()=> {
+        window.location.href = '/dashboard-user'
+        },10000)
+    }
+    const displayImage = () => {
+        console.log("ok");
+        if(this.files && this.files[0]){
+                let reader = new FileReader();
+                reader.onload =(e)=>{
+                    console.log(e.target.result);
+                    userImage.setAttribute("src",e.target.result);
+                    userImage.style.display = "block";
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+    }
+
+    var display = document.getElementById('image');
+    var userImage = document.getElementById('userimage');
+    display.addEventListener('change',() => {displayImage})
+
+    const deleteProfile = async () => {
+        const xml = new XMLHttpRequest();
+        const url = "/dashboard-user/profile/delete";
+            xml.open('POST',url,true);
+            await xml.setRequestHeader("content-type",'application/json');
+            var ob1 = await xml.send(JSON.stringify({
+                userEmail: email
+            })
+            );
+            alert();       
+        }
+   /* const updateInfo = () => {
+        let updatedData = {};
+        updatedData.fname = document.getElementById('fname').value;
+        updatedData.lname = document.getElementById('lname').value;
+        updatedData.email = document.getElementById('email').value;
+        updatedData.password = document.getElementById('password').value;
+        updatedData.address = document.getElementById('address').value;
+        updatedData.phoneNumber = document.getElementById('phone').value;
+        console.log(updatedData);
+        var xhr = new XMLHttpRequest();
+        var url = "/profile"; 
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(
+            JSON.stringify({
+                info: updatedData, 
+            })); 
+            }*/
+</script>

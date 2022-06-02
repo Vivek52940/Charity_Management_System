@@ -1,0 +1,106 @@
+.profile__container {
+    margin-top: -47%;
+    margin-left: 20%;
+}
+
+.profile__name {
+    color: white;
+    display: flex;
+    font-weight: 100;
+    font-style: italic;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.profile__info, .profile__infomore {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 6%;
+}
+
+.profile__info > label , .profile__infomore > label {
+    margin-top: 1%;
+    font-size: 25px;
+    color: white;
+    font-weight: lighter;
+}
+
+.profile__info > input ,  .profile__infomore > input {
+    width: 70%;
+    height: 5vh;
+    background: transparent;
+    border: 1px solid  white;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.profile__section {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+}
+
+.btn-update {
+    display: inline-block;
+    border-radius: 40px;
+    background-color: #9B3979;
+    color: white;
+    font-size: 20px;
+    padding: 6px 10px;
+    border: none;
+    width: 15%;
+    height: 7vh;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #9B3979;
+}
+
+.btn-delete {
+    display: inline-block;
+    border-radius: 40px;
+    background-color: #9B3979;
+    color: white;
+    font-size: 20px;
+    padding: 6px 10px;
+    border: none;
+    width: 15%;
+    height: 7vh;
+    margin-left: 10%;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  
+.custom-file-input::before {
+    content: 'Choose files';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-size: 20px;
+    font-family: "montserrat";
+  }
+  .custom-file-input:hover::before {
+    border-color: black;
+  }
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
